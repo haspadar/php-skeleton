@@ -3,6 +3,7 @@
   "description": "Reusable template for PHP libraries: Composer, CI, static analysis — all synced via one script",
   "type": "library",
   "license": "MIT",
+  "bin": ["bin/skeleton.php"],
   "require": {
     "php": "8.4.*"
   },
