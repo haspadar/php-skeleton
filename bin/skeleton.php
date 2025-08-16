@@ -43,10 +43,15 @@ use Skeleton\Text\TextOf;
 use Skeleton\Text\TitleCase;
 use Skeleton\VendorName;
 
-$autoload = __DIR__ . '/../vendor/autoload.php';
+$binPath = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0]['file'];
+$basePath = dirname($binPath, 3);
+$autoload = $basePath . '/vendor/autoload.php';
 if (!file_exists($autoload)) {
-    $autoload = dirname(__DIR__, 3) . '/vendor/autoload.php';
+    fwrite(STDERR, "Autoload not found at $autoload\n");
+    exit(1);
 }
+
+require_once $autoload;
 
 require_once $autoload;
 
