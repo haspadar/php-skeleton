@@ -59,7 +59,7 @@ $input = new Argv($argv);
 $composer = new ComposerJson(
     new StickyText(
         new DiskFile(
-            new PathFrom(__DIR__ . '/../composer.json'),
+            new PathFrom($basePath . '/composer.json')
         )->contents()
     )
 );
