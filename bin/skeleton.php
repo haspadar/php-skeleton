@@ -43,7 +43,12 @@ use Skeleton\Text\TextOf;
 use Skeleton\Text\TitleCase;
 use Skeleton\VendorName;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+$autoload = __DIR__ . '/../vendor/autoload.php';
+if (!file_exists($autoload)) {
+    $autoload = dirname(__DIR__, 3) . '/vendor/autoload.php';
+}
+
+require_once $autoload;
 
 $input = new Argv($argv);
 $composer = new ComposerJson(
