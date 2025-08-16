@@ -1,0 +1,10 @@
+{
+  "name": "Haspadar/mono",
+  "description": "Lib",
+  "autoload": {
+    "psr-4": {
+      "Mono\\": "src/",
+      "Mono\\Tests\\": "tests/"
+    }
+  }
+}
